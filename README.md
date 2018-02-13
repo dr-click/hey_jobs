@@ -11,3 +11,16 @@
   > Rails 5.1.4
 
   > PostgreSQL
+
+
+* Test dependencies
+
+    > rspec: Testing framework for Rails
+
+    > faker: A library for generating fake data such as names, addresses, and phone numbers
+
+    > factory_girl_rails: Fixtures replacement with a straightforward definition syntax
+
+    > simplecov: Code coverage for Ruby
+
+    > selenium-webdriver: WebDriver is a tool for writing automated tests of websites

@@ -74,7 +74,7 @@
 
 ### Fixes
 
-    * List exist AdServices but their Campaigns are not exist
+  * List exist AdServices but their Campaigns are not exist
 
 ---
 
@@ -97,7 +97,7 @@
 
 ---
 
-### Important files contains Logic
+### Important files contain Logic
 
   * /app/models/concerns/ad.rb
   * /app/controllers/concerns/ad_service.rb

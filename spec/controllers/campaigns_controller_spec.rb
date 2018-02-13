@@ -41,9 +41,23 @@ RSpec.describe CampaignsController, type: :controller do
   # CampaignsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  describe "GET #compare" do
+    it "returns a success response" do
+      campaign = FactoryBot.create(:campaign)
+      get :compare, params: {}, session: valid_session
+      expect(response).to be_success
+    end
+
+    it "returns a correct count" do
+      campaign = FactoryBot.create(:campaign)
+      get :compare, params: {}, session: valid_session
+      expect(assigns(:campaigns).count).to eql(Campaign.count)
+    end
+  end
+
   describe "GET #index" do
     it "returns a success response" do
-      campaign = Campaign.create! valid_attributes
+      campaign = FactoryBot.create(:campaign)
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -51,7 +65,7 @@ RSpec.describe CampaignsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      campaign = Campaign.create! valid_attributes
+      campaign = FactoryBot.create(:campaign)
       get :show, params: {id: campaign.to_param}, session: valid_session
       expect(response).to be_success
     end
@@ -66,7 +80,7 @@ RSpec.describe CampaignsController, type: :controller do
 
   describe "GET #edit" do
     it "returns a success response" do
-      campaign = Campaign.create! valid_attributes
+      campaign = FactoryBot.create(:campaign)
       get :edit, params: {id: campaign.to_param}, session: valid_session
       expect(response).to be_success
     end
@@ -101,13 +115,13 @@ RSpec.describe CampaignsController, type: :controller do
       }
 
       it "updates the requested campaign" do
-        campaign = Campaign.create! valid_attributes
+        campaign = FactoryBot.create(:campaign)
         put :update, params: {id: campaign.to_param, campaign: new_attributes}, session: valid_session
         campaign.reload
       end
 
       it "redirects to the campaign" do
-        campaign = Campaign.create! valid_attributes
+        campaign = FactoryBot.create(:campaign)
         put :update, params: {id: campaign.to_param, campaign: valid_attributes}, session: valid_session
         expect(response).to redirect_to(campaign)
       end
@@ -115,7 +129,7 @@ RSpec.describe CampaignsController, type: :controller do
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
-        campaign = Campaign.create! valid_attributes
+        campaign = FactoryBot.create(:campaign)
         put :update, params: {id: campaign.to_param, campaign: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
@@ -124,14 +138,14 @@ RSpec.describe CampaignsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested campaign" do
-      campaign = Campaign.create! valid_attributes
+      campaign = FactoryBot.create(:campaign)
       expect {
         delete :destroy, params: {id: campaign.to_param}, session: valid_session
       }.to change(Campaign, :count).by(-1)
     end
 
     it "redirects to the campaigns list" do
-      campaign = Campaign.create! valid_attributes
+      campaign = FactoryBot.create(:campaign)
       delete :destroy, params: {id: campaign.to_param}, session: valid_session
       expect(response).to redirect_to(campaigns_url)
     end

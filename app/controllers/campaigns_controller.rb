@@ -1,6 +1,14 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
 
+  # GET /campaigns/compare
+  # GET /campaigns/compare.json
+  def compare
+    campaigns = Campaign.all
+    ads = AdService.new.call.as_json["ads"]
+    @campaigns = CompareService.new(campaigns, ads).compare
+  end
+
   # GET /campaigns
   # GET /campaigns.json
   def index

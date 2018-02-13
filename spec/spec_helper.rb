@@ -13,7 +13,16 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require 'webmock/rspec'
+
 RSpec.configure do |config|
+
+  config.before(:each) do
+    stub_request(:any, /mockbin.org/).
+    to_return(status: 200, body: '{ "ads": [ { "reference": "101", "status": "enabled", "description": "Created By Mostafa" }] }', headers: {})
+  end
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

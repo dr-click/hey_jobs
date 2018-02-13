@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.number_field :status, id: :campaign_status %>
+    <%= form.select(:status, Campaign.statuses.keys.collect {|s| [s.titleize, s]}, :prompt => 'Select', id: :campaign_status) %>
   </div>
 
   <div class="field">

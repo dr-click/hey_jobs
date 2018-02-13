@@ -12,7 +12,7 @@ RSpec.describe "campaigns/edit", type: :view do
 
       assert_select "select[name=?]", "campaign[job_id]"
 
-      assert_select "input[name=?]", "campaign[status]"
+      assert_select "select[name=?]", "campaign[status]"
 
       assert_select "input[name=?]", "campaign[external_reference]"
 

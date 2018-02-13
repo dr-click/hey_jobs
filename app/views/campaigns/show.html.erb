@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @campaign.job.title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @campaign.status %>
+</p>
+
+<p>
+  <strong>External reference:</strong>
+  <%= @campaign.external_reference %>
+</p>
+
+<p>
+  <strong>Ad description:</strong>
+  <%= @campaign.ad_description %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<%= link_to 'Back', campaigns_path %>

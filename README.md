@@ -1,26 +1,24 @@
-# HeyJobs
+# README
 
-###### Service which is capable of detecting discrepancies between the state of the campaigns on the app side and ads on the AdService side.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## Project Details:
+Things you may want to cover:
 
-* Environment
+* Ruby version
 
-  > Ruby 2.5.0
+* System dependencies
 
-  > Rails 5.1.4
+* Configuration
 
-  > PostgreSQL
+* Database creation
 
+* Database initialization
 
-* Test dependencies
+* How to run the test suite
 
-    > rspec: Testing framework for Rails
+* Services (job queues, cache servers, search engines, etc.)
 
-    > faker: A library for generating fake data such as names, addresses, and phone numbers
+* Deployment instructions
 
-    > factory_girl_rails: Fixtures replacement with a straightforward definition syntax
-
-    > simplecov: Code coverage for Ruby
-
-    > selenium-webdriver: WebDriver is a tool for writing automated tests of websites
+* ...

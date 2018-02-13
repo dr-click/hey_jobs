@@ -2,7 +2,7 @@ class Ad
   # List of available statuses
   @@statuses = {enabled: 0, disabled: 1}
 
-  attr_accessor :reference, :status, :description, :campaign
+  attr_accessor :reference, :status, :description
 
   # Init Method
   def initialize(obj)
@@ -33,11 +33,6 @@ class Ad
   # Set current instance status
   def status= s
     @status = @@statuses[s.to_sym]
-  end
-
-  # Return current assigned campaign or load from db
-  def campaign
-    @campaign || Campaigns.where(external_reference: @reference).first
   end
 
   @@statuses.each do |k, v|

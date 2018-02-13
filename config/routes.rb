@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :jobs
   resources :ads, only: :index
+  root :to => "pages#home"
 end

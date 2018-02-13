@@ -10,5 +10,16 @@
 
   <body>
     <%= yield %>
+    <ul>
+      <li>
+        <%= link_to "Manage Jobs", jobs_path %>
+      </li>
+      <li>
+        <%= link_to "Manage Campaigns", campaigns_path %>
+      </li>
+      <li>
+        <%= link_to "Compare Campaigns with AdService", compare_campaigns_path %>
+      </li>
+    </ul>
   </body>
 </html>

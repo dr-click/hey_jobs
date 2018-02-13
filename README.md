@@ -1,24 +1,13 @@
-# README
+# HeyJobs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###### Service which is capable of detecting discrepancies between the state of the campaigns on the app side and ads on the AdService side.
 
-Things you may want to cover:
+## Project Details:
 
-* Ruby version
+* Environment
 
-* System dependencies
+  > Ruby 2.5.0
 
-* Configuration
+  > Rails 5.1.4
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  > PostgreSQL
